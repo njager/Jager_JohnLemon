@@ -18,4 +18,13 @@ public class Observer : MonoBehaviour
             m_IsPlayerInRange = true;
         }
     }
+
+    //detects if the player has exited range
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.transform == player)
+        {
+            m_IsPlayerInRange = false;
+        }
+    }
 }
