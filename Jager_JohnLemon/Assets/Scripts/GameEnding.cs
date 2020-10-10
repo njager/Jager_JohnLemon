@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameEnding : MonoBehaviour
 {
@@ -30,24 +31,28 @@ public class GameEnding : MonoBehaviour
     {
         if(m_IsPlayerAtExit)
         {
-            EndLevel(exitBackgroundImageCanvasGroup);
+            EndLevel(exitBackgroundImageCanvasGroup, false);
         }
         else if(m_IsPlayerCaught)
         {
-            EndLevel(caughtBackgroundImageCanvasGroup);
+            EndLevel(caughtBackgroundImageCanvasGroup, true);
         }
     }
 
-    //activates the end screen and quits game
-    void EndLevel(CanvasGroup imageCanvasGroup)
+    //restarts or ends the game by playing an appropriate UI image
+    void EndLevel(CanvasGroup imageCanvasGroup, bool doRestart)
     {
         m_Timer += Time.deltaTime;
 
         imageCanvasGroup.alpha = m_Timer / fadeDuration;
 
-        if(m_Timer > fadeDuration + displayImageDuration)
-        {
-            Application.Quit();
-        }
+        if(doRestart)
+            {
+            SceneManager.LoadScene(0);
+            }
+            else
+            {
+                Application.Quit();
+            }
     }
 }
