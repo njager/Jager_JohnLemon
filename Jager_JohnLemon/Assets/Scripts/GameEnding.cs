@@ -8,10 +8,12 @@ public class GameEnding : MonoBehaviour
     public float fadeDuration = 1f;
     public GameObject player;
     public CanvasGroup exitBackgroundImageCanvasGroup;
+    public CanvasGroup caughtBackgroundImageCanvasGroup;
     public float displayImageDuration = 1f;
 
     //member variables
     bool m_IsPlayerAtExit;
+    bool m_IsPlayerCaught;
     float m_Timer;
 
     //detect player hit win box
