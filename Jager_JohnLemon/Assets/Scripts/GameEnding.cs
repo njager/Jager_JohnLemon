@@ -26,6 +26,12 @@ public class GameEnding : MonoBehaviour
         }
     }
 
+    //public method that called to indicate the player has been caught
+    public void CaughtPlayer()
+    {
+        m_IsPlayerCaught = true;
+    }
+
     //is called every frame; checks for status changes
     private void Update()
     {

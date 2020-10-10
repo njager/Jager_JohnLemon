@@ -311,6 +311,7 @@ MonoBehaviour:
   fadeDuration: 1
   player: {fileID: 1400995212}
   exitBackgroundImageCanvasGroup: {fileID: 828119834}
+  caughtBackgroundImageCanvasGroup: {fileID: 0}
   displayImageDuration: 1
 --- !u!1 &705507993
 GameObject:
@@ -4233,7 +4234,7 @@ PrefabInstance:
     - target: {fileID: 950741148207995696, guid: a44f0eeeb697ac04b96b347933f367b7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10
+      value: -15.2
       objectReference: {fileID: 0}
     - target: {fileID: 950741148207995696, guid: a44f0eeeb697ac04b96b347933f367b7,
         type: 3}
@@ -4243,7 +4244,7 @@ PrefabInstance:
     - target: {fileID: 950741148207995696, guid: a44f0eeeb697ac04b96b347933f367b7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 950741148207995696, guid: a44f0eeeb697ac04b96b347933f367b7,
         type: 3}
@@ -4253,7 +4254,7 @@ PrefabInstance:
     - target: {fileID: 950741148207995696, guid: a44f0eeeb697ac04b96b347933f367b7,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.92387956
       objectReference: {fileID: 0}
     - target: {fileID: 950741148207995696, guid: a44f0eeeb697ac04b96b347933f367b7,
         type: 3}
@@ -4263,7 +4264,7 @@ PrefabInstance:
     - target: {fileID: 950741148207995696, guid: a44f0eeeb697ac04b96b347933f367b7,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.38268343
       objectReference: {fileID: 0}
     - target: {fileID: 950741148207995696, guid: a44f0eeeb697ac04b96b347933f367b7,
         type: 3}
@@ -4278,7 +4279,7 @@ PrefabInstance:
     - target: {fileID: 950741148207995696, guid: a44f0eeeb697ac04b96b347933f367b7,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 135
       objectReference: {fileID: 0}
     - target: {fileID: 950741148207995696, guid: a44f0eeeb697ac04b96b347933f367b7,
         type: 3}
