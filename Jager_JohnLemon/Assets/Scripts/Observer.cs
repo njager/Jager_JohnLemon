@@ -27,4 +27,14 @@ public class Observer : MonoBehaviour
             m_IsPlayerInRange = false;
         }
     }
+
+    //called every frame; checks line of sight by raycasting
+    private void Update()
+    {
+        if(m_IsPlayerInRange)
+        {
+            Vector3 direction = player.position - transform.position + Vector3.up;
+            Ray ray = new Ray(transform.position, direction);
+        }
+    }
 }
