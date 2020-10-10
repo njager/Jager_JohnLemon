@@ -30,15 +30,20 @@ public class GameEnding : MonoBehaviour
     {
         if(m_IsPlayerAtExit)
         {
-            EndLevel();
+            EndLevel(exitBackgroundImageCanvasGroup);
+        }
+        else if(m_IsPlayerCaught)
+        {
+            EndLevel(caughtBackgroundImageCanvasGroup);
         }
     }
 
     //activates the end screen and quits game
-    void EndLevel()
+    void EndLevel(CanvasGroup imageCanvasGroup)
     {
         m_Timer += Time.deltaTime;
-        exitBackgroundImageCanvasGroup.alpha = m_Timer / fadeDuration;
+
+        imageCanvasGroup.alpha = m_Timer / fadeDuration;
 
         if(m_Timer > fadeDuration + displayImageDuration)
         {
