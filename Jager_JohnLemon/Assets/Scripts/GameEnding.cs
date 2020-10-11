@@ -40,7 +40,7 @@ public class GameEnding : MonoBehaviour
     {
         if(m_IsPlayerAtExit)
         {
-            EndLevel(exitBackgroundImageCanvasGroup, false, exitAudio;
+            EndLevel(exitBackgroundImageCanvasGroup, false, exitAudio);
         }
         else if(m_IsPlayerCaught)
         {
@@ -51,6 +51,12 @@ public class GameEnding : MonoBehaviour
     //restarts or ends the game by playing an appropriate UI image
     void EndLevel(CanvasGroup imageCanvasGroup, bool doRestart, AudioSource audioSource)
     {
+        if(!m_HasAudioPlayed)
+        {
+            audioSource.Play();
+            m_HasAudioPlayed = true;
+        }
+
         m_Timer += Time.deltaTime;
 
         imageCanvasGroup.alpha = m_Timer / fadeDuration;
