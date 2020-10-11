@@ -9,13 +9,16 @@ public class GameEnding : MonoBehaviour
     public float fadeDuration = 1f;
     public GameObject player;
     public CanvasGroup exitBackgroundImageCanvasGroup;
+    public AudioSource exitAudio;
     public CanvasGroup caughtBackgroundImageCanvasGroup;
+    public AudioSource caughtAudio;
     public float displayImageDuration = 1f;
 
     //member variables
     bool m_IsPlayerAtExit;
     bool m_IsPlayerCaught;
     float m_Timer;
+    bool m_HasAudioPlayed;
 
     //detect player hit win box
     private void OnTriggerEnter(Collider other)
@@ -37,16 +40,16 @@ public class GameEnding : MonoBehaviour
     {
         if(m_IsPlayerAtExit)
         {
-            EndLevel(exitBackgroundImageCanvasGroup, false);
+            EndLevel(exitBackgroundImageCanvasGroup, false, exitAudio;
         }
         else if(m_IsPlayerCaught)
         {
-            EndLevel(caughtBackgroundImageCanvasGroup, true);
+            EndLevel(caughtBackgroundImageCanvasGroup, true, caughtAudio);
         }
     }
 
     //restarts or ends the game by playing an appropriate UI image
-    void EndLevel(CanvasGroup imageCanvasGroup, bool doRestart)
+    void EndLevel(CanvasGroup imageCanvasGroup, bool doRestart, AudioSource audioSource)
     {
         m_Timer += Time.deltaTime;
 
