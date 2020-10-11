@@ -36,6 +36,7 @@ public class GameEnding : MonoBehaviour
     }
 
     //is called every frame; checks for status changes
+    //ends level and sets appropriate parameters
     private void Update()
     {
         if(m_IsPlayerAtExit)
