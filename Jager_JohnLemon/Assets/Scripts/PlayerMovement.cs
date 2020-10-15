@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     AudioSource m_AudioSource;
 
     public GameObject projectilePrefab;
-    public Transform ShotSpawn;
+    public Transform shotSpawn;
     public float shotSpeed = 10f;
 
     //public variables
@@ -30,7 +30,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-
+            GameObject projectile = Instantiate(projectilePrefab, shotSpawn.transform.position, projectilePrefab.transform.rotation);
+            Rigidbody projectileRB = projectile.GetComponent <Rigidbody> ();
+            projectileRB.velocity = transform.forward * shotSpeed;
         }
     }
 
