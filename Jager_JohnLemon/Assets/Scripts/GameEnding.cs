@@ -20,6 +20,8 @@ public class GameEnding : MonoBehaviour
     float m_Timer;
     bool m_HasAudioPlayed;
 
+    float timeLeft = 0f;
+
     //detect player hit win box
     private void OnTriggerEnter(Collider other)
     {
@@ -47,6 +49,14 @@ public class GameEnding : MonoBehaviour
         {
             EndLevel(caughtBackgroundImageCanvasGroup, true, caughtAudio);
         }
+
+        timeLeft += Time.deltaTime;
+        print("timeLeft:" + timeLeft);
+        /*if(timeLeft >= 0)
+        {
+            EndLevel(caughtBackgroundImageCanvasGroup, true, caughtAudio);
+        }
+        */
     }
 
     //restarts or ends the game by playing an appropriate UI image
