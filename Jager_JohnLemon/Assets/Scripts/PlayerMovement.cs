@@ -11,6 +11,10 @@ public class PlayerMovement : MonoBehaviour
     Quaternion m_Rotation = Quaternion.identity;
     AudioSource m_AudioSource;
 
+    public GameObject projectilePrefab;
+    public Transform ShotSpawn;
+    public float shotSpeed = 10f;
+
     //public variables
     public float turnSpeed = 20f;
 
@@ -20,6 +24,14 @@ public class PlayerMovement : MonoBehaviour
         m_Animator = GetComponent<Animator>();
         m_Rigidbody = GetComponent<Rigidbody>();
         m_AudioSource = GetComponent<AudioSource>();
+    }
+
+    public void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+
+        }
     }
 
     // Update is called once per frame
