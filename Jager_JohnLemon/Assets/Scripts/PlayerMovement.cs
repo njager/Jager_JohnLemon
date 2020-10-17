@@ -11,12 +11,11 @@ public class PlayerMovement : MonoBehaviour
     Quaternion m_Rotation = Quaternion.identity;
     AudioSource m_AudioSource;
 
+    //public variables
+    public float turnSpeed = 20f;
     public GameObject projectilePrefab;
     public Transform shotSpawn;
     public float shotSpeed = 10f;
-
-    //public variables
-    public float turnSpeed = 20f;
 
     // Start is called before the first frame update
     void Start()
