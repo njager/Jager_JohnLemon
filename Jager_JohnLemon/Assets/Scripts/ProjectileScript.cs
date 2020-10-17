@@ -8,19 +8,26 @@ public class ProjectileScript : MonoBehaviour
 
     private void Start()
     {
-        //Destroy(GameObject projectile, float 3.0);
+        Destroy(gameObject, 5f);
         
     }
+    //detects bullet collision and deals damage to enemies
     private void OnTriggerEnter(Collider other)
     {
-        /*if(!other.isTrigger)
+        if(!other.isTrigger)
         {
             if (other.gameObject.CompareTag("Enemy"))
             {
-                EnemyHealth eHealth = other.game
-            }
+                EnemyHealth ehealth = other.gameObject.GetComponent<EnemyHealth>();
+
+                if (ehealth != null)
+                {
+                    ehealth.TakeDamage(1);
+                }
                 Destroy(gameObject);
+            }
+            
         }
-         */   
+        
     }
 }
