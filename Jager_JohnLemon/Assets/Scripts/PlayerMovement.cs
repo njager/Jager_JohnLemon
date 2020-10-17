@@ -69,9 +69,13 @@ public class PlayerMovement : MonoBehaviour
             m_AudioSource.Stop();
         }
 
-        //sets a rotation vector
-        Vector3 desiredForward = Vector3.RotateTowards(transform.forward, m_Movement, turnSpeed * Time.deltaTime, 0f);
-        m_Rotation = Quaternion.LookRotation(desiredForward);
+        //sets a rotation vector by returning mouse cursor''s posiiton and translating that into world position
+        Vector2 mouseScreenPos = Input.mousePosition;
+        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(
+            new Vector3(mouseScreenPos.x,
+            mouseScreenPos.y,
+            Camera.main.transform.position.y - transform.position.y)
+            );
     }
 
     //applies movement and rotation
