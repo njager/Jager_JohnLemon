@@ -31,7 +31,7 @@ public class WaypointPatrol : MonoBehaviour
         {
             Patrol();
         }
-        else if (observer.playerSpotted == true) 
+        else if (!observer.playerSpotted == false) 
         {
             Chase();
         }
@@ -46,6 +46,6 @@ public class WaypointPatrol : MonoBehaviour
     }
     void Chase()
     {
-
+        navMeshAgent.SetDestination(player.transform.position);
     }
 }
