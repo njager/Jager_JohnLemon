@@ -20,7 +20,7 @@ public class GameEnding : MonoBehaviour
     float m_Timer;
     bool m_HasAudioPlayed;
 
-    float timeLeft = 0f;
+    float timeCurrent = 0f;
 
     //detect player hit win box
     private void OnTriggerEnter(Collider other)
@@ -50,9 +50,9 @@ public class GameEnding : MonoBehaviour
             EndLevel(caughtBackgroundImageCanvasGroup, true, caughtAudio);
         }
 
-        timeLeft += Time.deltaTime;
-        print("timeLeft:" + timeLeft);
-        /*if(timeLeft >= 0)
+        timeCurrent += Time.deltaTime;
+        
+        /*if(timeCurrent >= 0)
         {
             EndLevel(caughtBackgroundImageCanvasGroup, true, caughtAudio);
         }
@@ -81,7 +81,17 @@ public class GameEnding : MonoBehaviour
             }
             else if(m_Timer > fadeDuration + displayImageDuration)
             {
-                Application.Quit();
+                if (timeCurrent <= 10)
+                {
+                //print("timeCurrent = " + timeCurrent);
+                    print("Congrats, you're fast!");
+                    Application.Quit();
+                }
+                else
+                {
+                    print("Good job, but you can do better!");
+                    Application.Quit();
+                }
             }
     }
 }
