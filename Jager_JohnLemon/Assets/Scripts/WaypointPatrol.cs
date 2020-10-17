@@ -27,19 +27,22 @@ public class WaypointPatrol : MonoBehaviour
     void Update()
     {
         //checks if the ghost has reached destination then changes waypoint
+        if (observer.playerSpotted == false)
+        {
+            Patrol();
+        }
+        else if (observer.playerSpotted == true) 
+        {
+            Chase();
+        }
+    }
+    void Patrol()
+    {
         if (navMeshAgent.remainingDistance < navMeshAgent.stoppingDistance)
         {
             m_CurrentWaypointIndex = (m_CurrentWaypointIndex + 1) % waypoints.Length;
             navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
         }
-        if (observer.playerSpotted == true) 
-        {
-            print("Spotted!");
-        }
-    }
-    void Patrol()
-    {
-
     }
     void Chase()
     {
