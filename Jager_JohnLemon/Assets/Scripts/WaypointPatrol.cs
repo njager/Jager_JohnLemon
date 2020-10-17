@@ -37,4 +37,12 @@ public class WaypointPatrol : MonoBehaviour
             print("Spotted!");
         }
     }
+    void Patrol()
+    {
+
+    }
+    void Chase()
+    {
+
+    }
 }
