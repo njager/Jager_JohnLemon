@@ -26,17 +26,21 @@ public class PlayerMovement : MonoBehaviour
         m_AudioSource = GetComponent<AudioSource>();
     }
 
+    //Called once every frame
     public void Update()
     {
+        //if player presses space, fire a projectile
         if(Input.GetKeyDown(KeyCode.Space))
         {
+            //create projectile
             GameObject projectile = Instantiate(projectilePrefab, shotSpawn.transform.position, projectilePrefab.transform.rotation);
-            Rigidbody projectileRB = projectile.GetComponent <Rigidbody> ();
+            //send projectile forward
+            Rigidbody projectileRB = projectile.GetComponent<Rigidbody>();
             projectileRB.velocity = transform.forward * shotSpeed;
         }
     }
 
-    // Update is called once per frame
+    // FixedUpdate is called last once per frame
     void FixedUpdate()
     {
         //gathers input data from WASD
