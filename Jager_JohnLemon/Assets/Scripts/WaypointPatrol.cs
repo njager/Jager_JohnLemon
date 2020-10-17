@@ -12,6 +12,7 @@ public class WaypointPatrol : MonoBehaviour
 
     //member variables
     int m_CurrentWaypointIndex;
+    public bool m_PlayerSpotted;
 
     // Start is called before the first frame update
     void Start()

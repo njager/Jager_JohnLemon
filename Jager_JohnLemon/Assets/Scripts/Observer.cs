@@ -7,6 +7,7 @@ public class Observer : MonoBehaviour
     // public variables
     public Transform player;
     public GameEnding gameEnding;
+    public WaypointPatrol waypointPatrol;
 
     // member variables
     bool m_IsPlayerInRange;

@@ -656,6 +656,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 4105916588909364637}
   waypoints: []
+  player: {fileID: 5062745499459072749, guid: b5e0aaac0e7a98c48972c541dff1bd2c, type: 3}
 --- !u!114 &3166867200105327124
 MonoBehaviour:
   m_ObjectHideFlags: 0
