@@ -17,6 +17,8 @@ public class WaypointPatrol : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        m_PlayerSpotted = false;
+
         navMeshAgent.SetDestination(waypoints[0].position);
 
         player = GameObject.FindGameObjectWithTag("Player");
