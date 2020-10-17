@@ -9,16 +9,15 @@ public class WaypointPatrol : MonoBehaviour
     public NavMeshAgent navMeshAgent;
     public Transform[] waypoints;
     public GameObject player;
+    public Observer observer;
 
     //member variables
     int m_CurrentWaypointIndex;
-    public bool m_PlayerSpotted;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        m_PlayerSpotted = false;
-
         navMeshAgent.SetDestination(waypoints[0].position);
 
         player = GameObject.FindGameObjectWithTag("Player");
@@ -32,6 +31,10 @@ public class WaypointPatrol : MonoBehaviour
         {
             m_CurrentWaypointIndex = (m_CurrentWaypointIndex + 1) % waypoints.Length;
             navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
+        }
+        if (observer.playerSpotted == true) 
+        {
+            print("Spotted!");
         }
     }
 }

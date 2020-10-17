@@ -657,6 +657,7 @@ MonoBehaviour:
   navMeshAgent: {fileID: 4105916588909364637}
   waypoints: []
   player: {fileID: 5062745499459072749, guid: b5e0aaac0e7a98c48972c541dff1bd2c, type: 3}
+  observer: {fileID: 4943370009286627094}
 --- !u!114 &3166867200105327124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1026,3 +1027,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7364755826215701980}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4943370009286627094 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2499144516222190282, guid: bb915d190854b474c86dbc54e29fe417,
+    type: 3}
+  m_PrefabInstance: {fileID: 7364755826215701980}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d839953a7090d747b8743d697edf3ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

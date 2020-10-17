@@ -8,10 +8,15 @@ public class Observer : MonoBehaviour
     public Transform player;
     public GameEnding gameEnding;
     public WaypointPatrol waypointPatrol;
+    public bool playerSpotted;
 
     // member variables
     bool m_IsPlayerInRange;
 
+    private void Start()
+    {
+        playerSpotted = false;
+    }
     //detects if the player has entered range
     private void OnTriggerEnter(Collider other)
     {
@@ -44,7 +49,7 @@ public class Observer : MonoBehaviour
             {
                 if(raycastHit.collider.transform == player)
                 {
-                    waypointPatrol.m_PlayerSpotted = true;
+                    playerSpotted = true;
                 }
             }
         }
