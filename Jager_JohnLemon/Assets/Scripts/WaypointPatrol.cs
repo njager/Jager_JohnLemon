@@ -8,6 +8,7 @@ public class WaypointPatrol : MonoBehaviour
     //public variables
     public NavMeshAgent navMeshAgent;
     public Transform[] waypoints;
+    public GameObject player;
 
     //member variables
     int m_CurrentWaypointIndex;
@@ -16,6 +17,8 @@ public class WaypointPatrol : MonoBehaviour
     void Start()
     {
         navMeshAgent.SetDestination(waypoints[0].position);
+
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
