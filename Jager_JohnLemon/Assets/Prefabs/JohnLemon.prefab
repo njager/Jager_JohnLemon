@@ -1000,7 +1000,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 6391872915298004526, guid: a260488c44b417a4c8591d10f3262fac,
     type: 3}
   shotSpawn: {fileID: 9169328797705078642}
-  shotSpeed: 10
+  shotSpeed: 20
   turnSpeed: 20
 --- !u!82 &1400995213
 AudioSource:
