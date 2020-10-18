@@ -36,6 +36,7 @@ public class WaypointPatrol : MonoBehaviour
             Chase();
         }
     }
+    //sets the ghost to move between waypoints
     void Patrol()
     {
         if (navMeshAgent.remainingDistance < navMeshAgent.stoppingDistance)
@@ -44,6 +45,7 @@ public class WaypointPatrol : MonoBehaviour
             navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
         }
     }
+    //sets teh ghost to chase the player
     void Chase()
     {
         navMeshAgent.SetDestination(player.transform.position);
