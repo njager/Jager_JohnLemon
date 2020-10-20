@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -16,7 +17,12 @@ public class PlayerMovement : MonoBehaviour
     public float shotSpeed = 10f;
     public GameObject projectilePrefab;
     public Transform shotSpawn;
-   
+    public GameEnding gameEnding;
+    public bool isPlayerCaught = false;
+
+    //private variables
+    private float colTimer = 0f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -91,5 +97,19 @@ public class PlayerMovement : MonoBehaviour
     {
         m_Rigidbody.MovePosition(m_Rigidbody.position + m_Movement * m_Animator.deltaPosition.magnitude);
         m_Rigidbody.MoveRotation(m_Rotation);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(colTimer <= 0)
+        {
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                isPlayerCaught = true;
+                colTimer = 1;
+            }
+        }
+        
+
     }
 }

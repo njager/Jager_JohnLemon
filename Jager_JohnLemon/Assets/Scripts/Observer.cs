@@ -50,11 +50,6 @@ public class Observer : MonoBehaviour
                 if(raycastHit.collider.transform == player)
                 {
                     playerSpotted = true;
-                    print("Spotted!");
-                }
-                else
-                {
-                    print("hit this object: " + raycastHit.collider.gameObject.name);
                 }
             }
         }
