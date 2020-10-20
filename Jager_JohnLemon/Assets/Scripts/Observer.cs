@@ -17,6 +17,7 @@ public class Observer : MonoBehaviour
     {
         playerSpotted = false;
     }
+    
     //detects if the player has entered range
     private void OnTriggerEnter(Collider other)
     {
@@ -34,7 +35,7 @@ public class Observer : MonoBehaviour
             m_IsPlayerInRange = false;
         }
     }
-
+    
     //called every frame; checks line of sight by raycasting
     private void Update()
     {

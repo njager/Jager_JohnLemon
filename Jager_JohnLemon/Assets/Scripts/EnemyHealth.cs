@@ -5,8 +5,8 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     //variables
-    public int health = 3;
-    public int enemyCount;
+    public int health = 1;
+    public PlayerMovement playerMovement;
 
     //function that when called removes health
     public void TakeDamage(int damageAmount)
@@ -16,7 +16,7 @@ public class EnemyHealth : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
-            enemyCount -= 1;
+            playerMovement.enemyCount -= 1;
         }
     }
 

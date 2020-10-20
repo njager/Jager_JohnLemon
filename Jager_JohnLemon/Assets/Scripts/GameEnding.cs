@@ -43,7 +43,7 @@ public class GameEnding : MonoBehaviour
     //ends level and sets appropriate parameters
     private void Update()
     {
-        if(enemyHealth.enemyCount <= 0)
+        if(playerMovement.enemyCount <= 0)
         {
             EndLevel(exitBackgroundImageCanvasGroup, false, exitAudio);
         }

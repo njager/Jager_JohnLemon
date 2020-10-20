@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform shotSpawn;
     public GameEnding gameEnding;
     public bool isPlayerCaught = false;
+    public int enemyCount;
 
     //private variables
     private float colTimer = 0f;

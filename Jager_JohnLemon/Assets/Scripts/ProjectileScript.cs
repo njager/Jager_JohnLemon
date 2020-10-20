@@ -6,6 +6,7 @@ public class ProjectileScript : MonoBehaviour
 {
     public GameObject projectile;
 
+
     private void Start()
     {
         Destroy(gameObject, 5f);
@@ -23,6 +24,7 @@ public class ProjectileScript : MonoBehaviour
                 if (ehealth != null)
                 {
                     ehealth.TakeDamage(1);
+
                 }
                 Destroy(gameObject);
             }
