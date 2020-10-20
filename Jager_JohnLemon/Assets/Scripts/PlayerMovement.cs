@@ -89,8 +89,8 @@ public class PlayerMovement : MonoBehaviour
         dirToMouse = dirToMouse.normalized;
 
         //sets john's rotation to point to mouse location
-        Vector3 desiredForward = Vector3.RotateTowards(dirToMouse, m_Movement, turnSpeed * Time.deltaTime, 0f);
-        m_Rotation = Quaternion.LookRotation(desiredForward);
+        //Vector3 desiredForward = Vector3.RotateTowards(transform.forward, dirToMouse, turnSpeed * Time.deltaTime, 0f);
+        m_Rotation = Quaternion.LookRotation(dirToMouse);
     }
 
     //applies movement and rotation
@@ -100,6 +100,7 @@ public class PlayerMovement : MonoBehaviour
         m_Rigidbody.MoveRotation(m_Rotation);
     }
 
+    //when collide with enemy, call player caught function
     private void OnCollisionEnter(Collision collision)
     {
         if(colTimer <= 0)

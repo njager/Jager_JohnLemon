@@ -2340,6 +2340,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: JohnLemon
       objectReference: {fileID: 0}
+    - target: {fileID: 5062745499466350885, guid: b5e0aaac0e7a98c48972c541dff1bd2c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8739870238740655812, guid: b5e0aaac0e7a98c48972c541dff1bd2c,
         type: 3}
       propertyPath: shotSpeed
