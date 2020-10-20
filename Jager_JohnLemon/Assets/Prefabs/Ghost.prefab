@@ -671,6 +671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  enemyCount: 1
 --- !u!82 &18983013458650217
 AudioSource:
   m_ObjectHideFlags: 0

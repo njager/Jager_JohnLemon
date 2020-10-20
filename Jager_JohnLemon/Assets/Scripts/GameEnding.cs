@@ -14,6 +14,7 @@ public class GameEnding : MonoBehaviour
     public AudioSource caughtAudio;
     public float displayImageDuration = 1f;
     public PlayerMovement playerMovement;
+    public EnemyHealth enemyHealth;
 
     //member variables
     bool m_IsPlayerAtExit;
@@ -42,7 +43,7 @@ public class GameEnding : MonoBehaviour
     //ends level and sets appropriate parameters
     private void Update()
     {
-        if(m_IsPlayerAtExit)
+        if(enemyHealth.enemyCount <= 0)
         {
             EndLevel(exitBackgroundImageCanvasGroup, false, exitAudio);
         }
