@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     //public variables
     public float turnSpeed = 20f;
     public float shotSpeed = 10f;
+    public float shotTimer = 0f;
     public GameObject projectilePrefab;
     public Transform shotSpawn;
     public GameEnding gameEnding;
@@ -36,14 +37,21 @@ public class PlayerMovement : MonoBehaviour
     //Called once every frame
     public void Update()
     {
+        shotTimer -= Time.deltaTime;
+
         //if player presses space, fire a projectile
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKey(KeyCode.Space))
         {
-            //create projectile
-            GameObject projectile = Instantiate(projectilePrefab, shotSpawn.transform.position, projectilePrefab.transform.rotation);
-            //send projectile forward
-            Rigidbody projectileRB = projectile.GetComponent<Rigidbody>();
-            projectileRB.velocity = transform.forward * shotSpeed;
+            if(shotTimer <= 0f)
+            {
+                //create projectile
+                GameObject projectile = Instantiate(projectilePrefab, shotSpawn.transform.position, projectilePrefab.transform.rotation);
+                //send projectile forward
+                Rigidbody projectileRB = projectile.GetComponent<Rigidbody>();
+                projectileRB.velocity = transform.forward * shotSpeed;
+
+                shotTimer = .6f;
+            }
         }
     }
 
