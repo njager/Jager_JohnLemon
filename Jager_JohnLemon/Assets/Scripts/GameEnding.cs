@@ -53,12 +53,7 @@ public class GameEnding : MonoBehaviour
         }
 
         timeCurrent += Time.deltaTime;
-        
-        /*if(timeCurrent >= 0)
-        {
-            EndLevel(caughtBackgroundImageCanvasGroup, true, caughtAudio);
-        }
-        */
+       
     }
 
     //restarts or ends the game by playing an appropriate UI image
