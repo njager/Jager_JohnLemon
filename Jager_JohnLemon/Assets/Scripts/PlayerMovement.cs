@@ -16,15 +16,15 @@ public class PlayerMovement : MonoBehaviour
     public float turnSpeed = 20f;
     public float shotSpeed = 10f;
     public float shotTimer = 0f;
+    public float shotTimerSetTo = .6f;
     public GameObject projectilePrefab;
     public Transform shotSpawn;
     public GameEnding gameEnding;
     public bool isPlayerCaught = false;
     public int enemyCount;
-
+ 
     //private variables
     private float colTimer = 0f;
-
 
     // Start is called before the first frame update
     void Start()
