@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     //public variables
     public float turnSpeed = 20f;
-    public float shotSpeed = 10f;
+    public float shotSpeed = 15f;
     public float shotTimer = 0f;
     public float shotTimerSetTo = .6f;
     public GameObject projectilePrefab;
@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
         shotTimer -= Time.deltaTime;
 
         //if player presses space, fire a projectile
-        if(Input.GetKey(KeyCode.Space))
+        if(Input.GetMouseButtonDown(0))
         {
             if(shotTimer <= 0f)
             {
