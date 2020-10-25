@@ -16,7 +16,7 @@ public class EnemyHealth : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
-            playerMovement.enemyCount -= 1;
+            playerMovement.ReduceCounterText();
         }
     }
 

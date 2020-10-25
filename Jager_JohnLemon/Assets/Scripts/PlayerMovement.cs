@@ -44,6 +44,12 @@ public class PlayerMovement : MonoBehaviour
         enemyCounter.text = "Enemies left: " + enemyCount.ToString();
     }
 
+    public void ReduceCounterText()
+    {
+        enemyCount -= 1;
+        SetCounterText();
+    }
+
     //Called once every frame
     public void Update()
     {
