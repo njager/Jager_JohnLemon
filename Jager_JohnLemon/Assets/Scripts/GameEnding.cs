@@ -26,6 +26,7 @@ public class GameEnding : MonoBehaviour
     bool m_IsPlayerCaught;
     float m_Timer;
     bool m_HasAudioPlayed;
+    bool m_PlayerWasFast;
 
     float timeCurrent = 0f;
 
@@ -35,6 +36,8 @@ public class GameEnding : MonoBehaviour
         goldTextObject.SetActive(false);
         silverImageObject.SetActive(false);
         silverTextObject.SetActive(false);
+
+        m_PlayerWasFast = false;
     }
 
     //detect player hit win box
@@ -95,12 +98,21 @@ public class GameEnding : MonoBehaviour
                 {
                 //print("timeCurrent = " + timeCurrent);
                     print("Congrats, you're fast!");
+                    goldImageObject.SetActive(true);
+                    goldTextObject.SetActive(true);
+                    m_PlayerWasFast = true;
                     Application.Quit();
                 }
                 else
                 {
-                    print("Good job, but you can do better!");
-                    Application.Quit();
+                    if (m_PlayerWasFast == false)
+                    {
+                        print("Good job, but you can do better!");
+                        silverImageObject.SetActive(true);
+                        silverTextObject.SetActive(true);
+                        Application.Quit();
+                    }
+                    
                 }
             }
     }
