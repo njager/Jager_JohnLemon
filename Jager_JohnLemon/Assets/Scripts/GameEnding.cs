@@ -15,6 +15,11 @@ public class GameEnding : MonoBehaviour
     public float displayImageDuration = 1f;
     public PlayerMovement playerMovement;
     public EnemyHealth enemyHealth;
+    public GameObject goldImageObject;
+    public GameObject goldTextObject;
+    public GameObject silverImageObject;
+    public GameObject silverTextObject;
+
 
     //member variables
     bool m_IsPlayerAtExit;
@@ -23,6 +28,11 @@ public class GameEnding : MonoBehaviour
     bool m_HasAudioPlayed;
 
     float timeCurrent = 0f;
+
+    private void Start()
+    {
+        
+    }
 
     //detect player hit win box
     private void OnTriggerEnter(Collider other)

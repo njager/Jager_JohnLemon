@@ -650,6 +650,10 @@ MonoBehaviour:
   displayImageDuration: 1
   playerMovement: {fileID: 1400995215}
   enemyHealth: {fileID: 1506261456}
+  goldImageObject: {fileID: 1882385969}
+  goldTextObject: {fileID: 1378892447}
+  silverImageObject: {fileID: 1389091178}
+  silverTextObject: {fileID: 1389091178}
 --- !u!1 &362763450
 GameObject:
   m_ObjectHideFlags: 0
@@ -1208,7 +1212,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 828119830}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
