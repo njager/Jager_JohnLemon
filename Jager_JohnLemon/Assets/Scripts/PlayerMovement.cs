@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -22,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     public GameEnding gameEnding;
     public bool isPlayerCaught = false;
     public int enemyCount;
+    public TextMeshProUGUI enemyCounter;
  
     //private variables
     private float colTimer = 0f;
@@ -32,6 +35,13 @@ public class PlayerMovement : MonoBehaviour
         m_Animator = GetComponent<Animator>();
         m_Rigidbody = GetComponent<Rigidbody>();
         m_AudioSource = GetComponent<AudioSource>();
+
+        SetCounterText();
+    }
+
+    void SetCounterText()
+    {
+        enemyCounter.text = "Enemies left: " + enemyCount.ToString();
     }
 
     //Called once every frame
