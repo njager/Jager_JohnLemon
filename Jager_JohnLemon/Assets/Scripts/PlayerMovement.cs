@@ -39,11 +39,13 @@ public class PlayerMovement : MonoBehaviour
         SetCounterText();
     }
 
+    //Sets and updates the counter text
     void SetCounterText()
     {
         enemyCounter.text = "Enemies left: " + enemyCount.ToString();
     }
 
+    //reduces enemy count by one and calls text update
     public void ReduceCounterText()
     {
         enemyCount -= 1;
