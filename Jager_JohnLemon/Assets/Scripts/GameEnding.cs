@@ -31,7 +31,10 @@ public class GameEnding : MonoBehaviour
 
     private void Start()
     {
-        
+        goldImageObject.SetActive(false);
+        goldTextObject.SetActive(false);
+        silverImageObject.SetActive(false);
+        silverTextObject.SetActive(false);
     }
 
     //detect player hit win box
