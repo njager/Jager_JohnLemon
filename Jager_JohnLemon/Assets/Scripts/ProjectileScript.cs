@@ -11,7 +11,7 @@ public class ProjectileScript : MonoBehaviour
     private void Start()
     {
         Destroy(gameObject, 5f);
-        audioSource = GetComponent<audioSource>();
+        audioSource = GetComponent<AudioSource>();
         
     }
     //detects bullet collision and deals damage to enemies
@@ -26,12 +26,17 @@ public class ProjectileScript : MonoBehaviour
                 if (ehealth != null)
                 {
                     ehealth.TakeDamage(1);
-
+                    PlaySplashSound();
                 }
                 Destroy(gameObject);
             }
             
         }
         
+    }
+
+    void PlaySplashSound()
+    {
+        audioSource.PlayOneShot(splashSFX);
     }
 }
