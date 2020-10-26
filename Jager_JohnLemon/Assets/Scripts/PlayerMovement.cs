@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 m_Movement;
     Quaternion m_Rotation = Quaternion.identity;
     AudioSource m_AudioSource;
+    AudioSource m_AudioSourceSq;
 
     //public variables
     public float turnSpeed = 20f;
@@ -25,9 +26,11 @@ public class PlayerMovement : MonoBehaviour
     public bool isPlayerCaught = false;
     public int enemyCount;
     public TextMeshProUGUI enemyCounter;
+    public AudioClip squishSFX;
  
     //private variables
     private float colTimer = 0f;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
         m_Animator = GetComponent<Animator>();
         m_Rigidbody = GetComponent<Rigidbody>();
         m_AudioSource = GetComponent<AudioSource>();
+        m_AudioSourceSq = GetComponent<AudioSource>();
 
         SetCounterText();
     }
@@ -43,6 +47,11 @@ public class PlayerMovement : MonoBehaviour
     void SetCounterText()
     {
         enemyCounter.text = "Enemies left: " + enemyCount.ToString();
+    }
+
+    void PlaySquishSound()
+    {
+        m_AudioSourceSq.PlayOneShot(squishSFX);
     }
 
     //reduces enemy count by one and calls text update
@@ -68,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
                 Rigidbody projectileRB = projectile.GetComponent<Rigidbody>();
                 projectileRB.velocity = transform.forward * shotSpeed;
 
+                PlaySquishSound();
                 shotTimer = .6f;
             }
         }
