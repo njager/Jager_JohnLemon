@@ -16144,6 +16144,11 @@ PrefabInstance:
       propertyPath: squishSFX
       value: 
       objectReference: {fileID: 8300000, guid: 823610cb3e20ca54380244e3ea701995, type: 3}
+    - target: {fileID: 8739870238740655812, guid: b5e0aaac0e7a98c48972c541dff1bd2c,
+        type: 3}
+      propertyPath: turnSpeed
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5e0aaac0e7a98c48972c541dff1bd2c, type: 3}
 --- !u!4 &5062745499686487230 stripped
