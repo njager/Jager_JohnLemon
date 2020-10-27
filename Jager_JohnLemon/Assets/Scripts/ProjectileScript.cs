@@ -30,8 +30,12 @@ public class ProjectileScript : MonoBehaviour
                 }
                 Destroy(gameObject);
             }
+            if (other.gameObject.CompareTag("Barrier"))
+            {
+                Destroy(gameObject);
+            }
 
-            
+
         }
         
         
