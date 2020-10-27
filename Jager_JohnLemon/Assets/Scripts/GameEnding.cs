@@ -94,7 +94,7 @@ public class GameEnding : MonoBehaviour
             }
             else if(m_Timer > fadeDuration + displayImageDuration)
             {
-                if (timeCurrent <= 10)
+                if (timeCurrent <= 65)
                 {
                     goldImageObject.SetActive(true);
                     goldTextObject.SetActive(true);
