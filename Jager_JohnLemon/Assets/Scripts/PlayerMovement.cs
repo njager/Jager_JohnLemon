@@ -132,7 +132,6 @@ public class PlayerMovement : MonoBehaviour
     //applies movement and rotation
     private void OnAnimatorMove()
     {
-        print("Moving");
         m_Rigidbody.MovePosition(m_Rigidbody.position + m_Movement * m_Animator.deltaPosition.magnitude);
         m_Rigidbody.MoveRotation(m_Rotation);
     }

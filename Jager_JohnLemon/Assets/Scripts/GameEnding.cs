@@ -96,8 +96,6 @@ public class GameEnding : MonoBehaviour
             {
                 if (timeCurrent <= 10)
                 {
-                //print("timeCurrent = " + timeCurrent);
-                    print("Congrats, you're fast!");
                     goldImageObject.SetActive(true);
                     goldTextObject.SetActive(true);
                     m_PlayerWasFast = true;
@@ -107,7 +105,6 @@ public class GameEnding : MonoBehaviour
                 {
                     if (m_PlayerWasFast == false)
                     {
-                        print("Good job, but you can do better!");
                         silverImageObject.SetActive(true);
                         silverTextObject.SetActive(true);
                         Application.Quit();
