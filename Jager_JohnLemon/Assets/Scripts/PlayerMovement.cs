@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public float turnSpeed = 20f;
     public float shotSpeed = 15f;
     public float shotTimer = 0f;
-    public float shotTimerSetTo = .6f;
+    public float shotTimerSetTo = 0f;
     public GameObject projectilePrefab;
     public Transform shotSpawn;
     public GameEnding gameEnding;
@@ -78,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
                 projectileRB.velocity = transform.forward * shotSpeed;
 
                 PlaySquishSound();
-                shotTimer = .6f;
+                shotTimer = shotTimerSetTo;
             }
         }
     }
