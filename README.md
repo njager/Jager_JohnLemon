@@ -18,3 +18,7 @@ Modifications
     Wood boxes and barrels serve as envrionmental props
 7. Post-processing
     Post processing is fairly warm and bright
+
+Controls
+    Move with WASD
+    Point and shoot with left mouse
