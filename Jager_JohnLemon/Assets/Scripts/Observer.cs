@@ -43,12 +43,11 @@ public class Observer : MonoBehaviour
         {
             Vector3 direction = player.position - transform.position + Vector3.up;
             
-            //creates + defines ray, sends out ray that detects and returns hit
-            Ray ray = new Ray(transform.position, direction);
-            RaycastHit raycastHit;
-            if(Physics.Raycast(ray, out raycastHit))
+            Ray ray = new Ray(transform.position, direction); //creates ray at the position of the parent object
+            RaycastHit raycastHit; //defines a raycast hit variable
+            if(Physics.Raycast(ray, out raycastHit)) //detects if the ray has hit anything
             {
-                if(raycastHit.collider.transform == player)
+                if(raycastHit.collider.transform == player) //if the raycast hit a collider and that collider is the player, then set bool
                 {
                     playerSpotted = true;
                 }

@@ -22,8 +22,6 @@ public class GameEnding : MonoBehaviour
 
 
     //member variables
-    bool m_IsPlayerAtExit;
-    bool m_IsPlayerCaught;
     float m_Timer;
     bool m_HasAudioPlayed;
     bool m_PlayerWasFast;
@@ -38,21 +36,6 @@ public class GameEnding : MonoBehaviour
         silverTextObject.SetActive(false);
 
         m_PlayerWasFast = false;
-    }
-
-    //detect player hit win box
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject == player)
-        {
-            m_IsPlayerAtExit = true;
-        }
-    }
-
-    //public method that called to indicate the player has been caught
-    public void CaughtPlayer()
-    {
-        m_IsPlayerCaught = true;
     }
 
     //is called every frame; checks for status changes
@@ -85,6 +68,7 @@ public class GameEnding : MonoBehaviour
 
         imageCanvasGroup.alpha = m_Timer / fadeDuration;
 
+        //determines restart parameters
         if(doRestart)
             {
             if (m_Timer > fadeDuration + displayImageDuration)
